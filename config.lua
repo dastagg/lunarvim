@@ -96,24 +96,18 @@ require("user.linters")
 -- set additional plugins
 require "user.plugins"
 
+-- set additional autocommands
+require "user.autocommands"
+
+-- set additional keymaps
+require "user.keymaps"
+
+-- set additional options
+require "user.options"
+
 -- Setup dap for python
 lvim.builtin.dap.active = true
 local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
 pcall(function() require("dap-python").setup(mason_path .. "packages/debugpy/venv/bin/python") end)
 
--- Autocommands (https://neovim.io/doc/user/autocmd.html)
--- vim.api.nvim_create_autocmd("BufEnter", {
---   pattern = { "*.json", "*.jsonc" },
---   -- enable wrap mode for json files only
---   command = "setlocal wrap",
--- })
--- vim.api.nvim_create_autocmd("FileType", {
---   pattern = "zsh",
---   callback = function()
---     -- let treesitter use bash highlight for zsh files as well
---     require("nvim-treesitter.highlight").attach(0, "bash")
---   end,
--- })
-require "user.keymaps"
-require "user.options"
 
