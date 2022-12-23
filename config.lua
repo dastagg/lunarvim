@@ -149,16 +149,7 @@ linters.setup {
 --     filetypes = { "javascript", "python" },
 --   },
 }
-
--- Additional Plugins
-lvim.plugins = {
-  {
-    "folke/trouble.nvim",
-    cmd = "TroubleToggle",
-  },
-  "mfussenegger/nvim-dap-python",
-}
-
+require "user.plugins"
 -- Setup dap for python
 lvim.builtin.dap.active = true
 local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
@@ -177,17 +168,6 @@ pcall(function() require("dap-python").setup(mason_path .. "packages/debugpy/ven
 --     require("nvim-treesitter.highlight").attach(0, "bash")
 --   end,
 -- })
+require "user.keymaps"
+require "user.options"
 
--- Use which-key to add extra bindings with the leader-key prefix
-lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
-lvim.builtin.which_key.mappings["t"] = {
-  name = "+Trouble",
-  r = { "<cmd>Trouble lsp_references<cr>", "References" },
-  f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
-  d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
-  q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
-  l = { "<cmd>Trouble loclist<cr>", "LocationList" },
-  w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
-}
-
-vim.cmd("let g:python3_host_prog = '/home/dastagg/.pyenv/versions/lvim/bin/python'")
