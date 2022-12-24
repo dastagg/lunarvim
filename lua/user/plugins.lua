@@ -24,5 +24,24 @@ lvim.plugins = {
     end,
     requires = "nvim-lua/plenary.nvim",
   },
+  {
+    "nvim-neotest/neotest",
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "antoinemadec/FixCursorHold.nvim",
+    },
+  },
+  -- neotest runners
+  -- https://github.com/nvim-neotest/neotest#supported-runners
+  { "nvim-neotest/neotest-python", },
+
+  --[[ For any runner without an adapter you can use neotest-vim-test
+  which supports any runner that vim-test supports. The vim-test adapter
+  does not support some of the more advanced features such as
+  error locations or per-test output. --]]
+  -- https://github.com/vim-test/vim-test/
+  { "vim-test/vim-test", },
+  { "nvim-neotest/neotest-vim-test" },
 }
 
