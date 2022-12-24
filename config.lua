@@ -105,6 +105,9 @@ require "user.keymaps"
 -- set additional options
 require "user.options"
 
+-- setup neotest
+require "user.neotest"
+
 -- Setup dap for python
 lvim.builtin.dap.active = true
 local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")

@@ -2,8 +2,8 @@
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
--- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
--- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
+lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 -- unmap a default keymapping
 -- vim.keymap.del("n", "<C-Up>")
 -- override a default keymapping
@@ -38,4 +38,20 @@ lvim.builtin.which_key.mappings["t"] = {
   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
   w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
 }
-
+lvim.builtin.which_key.mappings["r"] = {
+  name = "+Run Code",
+  c = { "<cmd>RunClose<cr>", "Close run window" },
+  r = { "<cmd>RunCode<cr>", "Run code" },
+  p = {
+    name = "+Run project",
+    t = { "<cmd>RunProject toggleterm<cr>", "Run file with toggleterm" },
+    T = { "<cmd>RunProject tab<cr>", "Run file in tab window" },
+    f = { "<cmd>RunProject float<cr>", "Run file in floating window" },
+  },
+  f = {
+    name = "Run file",
+    t = { "<cmd>RunFile toggleterm<cr>", "Run file with toggleterm" },
+    T = { "<cmd>RunFile tab<cr>", "Run file in tab window" },
+    f = { "<cmd>RunFile float<cr>", "Run file in floating window" },
+  },
+}
