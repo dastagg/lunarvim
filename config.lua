@@ -31,9 +31,14 @@ lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
--- Disable project root finder
+-- Had to disable project auto root finder to run python.
 lvim.builtin.project.manual_mode = true
-
+-- NOTE: to run python using coderunner:
+--    open file in buffer
+--    enter command:
+--        :lcd %:p:h
+--    This will set the cwd for the current window only.
+--
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
