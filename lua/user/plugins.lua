@@ -14,7 +14,7 @@ lvim.plugins = {
           c = "gcc $fileName -o $fileNameWithoutExt && ./$fileNameWithoutExt",
           cpp = "g++ $fileName -o $fileNameWithoutExt && ./$fileNameWithoutExt",
           java = "cd $dir && javac $fileName && java $fileNameWithoutExt",
-          python = "python3 -u",
+          python = "python -u",
           go = "go run .",
           javascript = "bun $fileName",
           typescript = "deno run",
@@ -44,4 +44,3 @@ lvim.plugins = {
   { "vim-test/vim-test", },
   { "nvim-neotest/neotest-vim-test" },
 }
-
