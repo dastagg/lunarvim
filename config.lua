@@ -31,6 +31,9 @@ lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
+-- Disable project root finder
+lvim.builtin.project.manual_mode = true
+
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
@@ -116,5 +119,3 @@ require "user.neotest"
 lvim.builtin.dap.active = true
 local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
 pcall(function() require("dap-python").setup(mason_path .. "packages/debugpy/venv/bin/python") end)
-
-
