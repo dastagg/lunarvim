@@ -117,6 +117,9 @@ require "user.keymaps"
 -- set additional options
 require "user.options"
 
+-- setup jinja2 snippets
+require("luasnip").filetype_extend("html", { "djangohtml" })
+
 -- setup neotest
 require "user.neotest"
 
