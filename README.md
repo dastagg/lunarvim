@@ -9,6 +9,11 @@ So if I opened lvim and installed something, then opened nvim, Mason would show 
 
 So I decided to delete my nvim configuration and just focus on the lvim configuration.
 
+## 2023-01-06:
+
+Added neogen for automatic docstring creation.
+Added Jinja2 snippets (luasnip:friendly_snippets:djangohtml)
+
 ## 2022-12-24:
 It is almost all the way there. There are some things left to do, but for now, it's good.
 
