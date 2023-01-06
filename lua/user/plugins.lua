@@ -43,4 +43,20 @@ lvim.plugins = {
   -- https://github.com/vim-test/vim-test/
   { "vim-test/vim-test", },
   { "nvim-neotest/neotest-vim-test" },
+  {
+    -- You can generate docstrings automatically.
+    "danymat/neogen",
+    config = function()
+      require("neogen").setup {
+        enabled = true,
+        languages = {
+          python = {
+            template = {
+              annotation_convention = "reST",
+            },
+          },
+        },
+      }
+    end,
+  },
 }
