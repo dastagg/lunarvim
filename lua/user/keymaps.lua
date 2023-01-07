@@ -29,15 +29,6 @@ lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 
 -- Use which-key to add extra bindings with the leader-key prefix
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
-lvim.builtin.which_key.mappings["t"] = {
-  name = "+Trouble",
-  r = { "<cmd>Trouble lsp_references<cr>", "References" },
-  f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
-  d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
-  q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
-  l = { "<cmd>Trouble loclist<cr>", "LocationList" },
-  w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
-}
 lvim.builtin.which_key.mappings["r"] = {
   name = "+Run Code",
   c = { "<cmd>RunClose<cr>", "Close run window" },
@@ -68,3 +59,25 @@ lvim.builtin.which_key.mappings["t"] = {
   S = { "<cmd>lua require('neotest').run.stop()<cr>", "Stop" },
   s = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Summary" },
 }
+lvim.builtin.which_key.mappings["n"] = {
+  name = "NeoDoc",
+  c = { "<cmd>lua require('neogen').generate({ type = 'class' })<CR>", "Class" },
+  e = { "<cmd>lua require('neogen').generate({ type = 'file' })<CR>", "File" },
+  f = { "<cmd>lua require('neogen').generate({ type = 'function' })<CR>", "Function" },
+  t = { "<cmd>lua require('neogen').generate({ type = 'type' })<CR>", "Type" },
+}
+-- local opts = { noremap = true, silent = true }
+-- vim.api.nvim_set_keymap("n", "<Leader>nf", ":lua require('neogen').generate()<CR>", opts)
+-- vim.api.nvim_set_keymap("n", "<Leader>nc", ":lua require('neogen').generate({ type = 'class' })<CR>", opts)
+-- mappings that are not being use right now.
+
+
+-- lvim.builtin.which_key.mappings["t"] = {
+--   name = "+Trouble",
+--   r = { "<cmd>Trouble lsp_references<cr>", "References" },
+--   f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
+--   d = { "<cmd>Trouble document_diagnostics<cr>", "Diagnostics" },
+--   q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
+--   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
+--   w = { "<cmd>Trouble workspace_diagnostics<cr>", "Workspace Diagnostics" },
+-- }
