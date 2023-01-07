@@ -9,8 +9,11 @@ So if I opened lvim and installed something, then opened nvim, Mason would show 
 
 So I decided to delete my nvim configuration and just focus on the lvim configuration.
 
-## 2023-01-06:
+## 2023-01-07:
+Noticed that since adding the Luasnip djangohtml snippets, the html lsp wasn't starting up when I opened a html file with embedded Jinja2 code. 
+Added options to the html-ls so it starts up when such a file is opened.
 
+## 2023-01-06:
 Added neogen for automatic docstring creation.
 Added Jinja2 snippets (luasnip:friendly_snippets:djangohtml)
 
