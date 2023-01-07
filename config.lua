@@ -58,6 +58,28 @@ lvim.builtin.treesitter.ensure_installed = {
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enable = true
 
+-- My list of installed helpers through Mason.
+--
+-- bash-language-server
+-- black
+-- css-lsp
+-- debugpy
+-- emmet-ls
+-- flake8
+-- html-lsp
+-- isort
+-- json-lsp
+-- lua-language-server
+-- prettier
+-- python-lsp-server
+-- tailwindcss-language-server
+-- typescript-language-server
+-- yaml-language-server
+--
+-- At some time in the future, I will figure out how to "auto-install" these,
+-- but for now, this is the list.
+-- (see below: sumneko_lua vs lua-language-server; but not sure what the correct name is etc.)
+--
 -- generic LSP settings
 
 -- -- make sure server will always be installed even if the server is in skipped_servers list
@@ -65,15 +87,6 @@ lvim.builtin.treesitter.highlight.enable = true
 --     "sumneko_lua",
 --     "jsonls",
 -- }
--- -- change UI setting of `LspInstallInfo`
--- -- see <https://github.com/williamboman/nvim-lsp-installer#default-configuration>
--- lvim.lsp.installer.setup.ui.check_outdated_servers_on_open = false
--- lvim.lsp.installer.setup.ui.border = "rounded"
--- lvim.lsp.installer.setup.ui.keymaps = {
---     uninstall_server = "d",
---     toggle_server_expand = "o",
--- }
-
 -- ---@usage disable automatic installation of servers
 lvim.lsp.installer.setup.automatic_installation = false
 
@@ -91,6 +104,10 @@ require("lvim.lsp.manager").setup("html", htmlopts)
 
 -- ---remove a server from the skipped list, e.g. eslint, or emmet_ls. !!Requires `:LvimCacheReset` to take effect!!
 -- ---`:LvimInfo` lists which server(s) are skipped for the current filetype
+-- lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
+--   return server ~= "pylsp"
+-- end, lvim.lsp.automatic_configuration.skipped_servers)
+
 -- lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
 --   return server ~= "emmet_ls"
 -- end, lvim.lsp.automatic_configuration.skipped_servers)
