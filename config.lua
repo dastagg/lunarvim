@@ -82,6 +82,12 @@ lvim.lsp.installer.setup.automatic_installation = false
 -- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
 local opts = {} -- check the lspconfig documentation for a list of all possible options
 require("lvim.lsp.manager").setup("pylsp", opts)
+require("lvim.lsp.manager").setup("emmet_ls", opts)
+
+local htmlopts = {
+  filetypes = { "html", "htmldjango" }
+}
+require("lvim.lsp.manager").setup("html", htmlopts)
 
 -- ---remove a server from the skipped list, e.g. eslint, or emmet_ls. !!Requires `:LvimCacheReset` to take effect!!
 -- ---`:LvimInfo` lists which server(s) are skipped for the current filetype
